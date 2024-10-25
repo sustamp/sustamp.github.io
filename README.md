@@ -1,7 +1,7 @@
 # sustamp.github.io 
 Loren's personal site.
 
-Repositories: <a href="https://github/sustamp" target="_blank">https://github.com/sustamp</a>
+Repositories: <a href="https://github.com/sustamp" target="_blank">https://github.com/sustamp</a>
 
 ## 项目列表
 - notes  
