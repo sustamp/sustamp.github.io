@@ -7,4 +7,4 @@ Repositories: <a href="https://github.com/sustamp" target="_blank">https://githu
 - notes  
   <a href="https://sustamp.github.io/notes" target="_blank">学习笔记</a>
 - notes-blog  
-  <a href="https://sustamp.github.io/notes-blog" target="_blank">笔记博客</a>
+  <a href="https://sustamp.github.io/notes-blog" target="_blank">云溪笔录</a>
