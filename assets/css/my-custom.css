@@ -7,8 +7,6 @@ body{
     font-family: var(--font-family);
 }
 
-/* *{border: solid 1px lightblue} */
-
 header{
     /* 让header置顶 */
     position: sticky;
@@ -119,15 +117,6 @@ header a{
     flex-direction: column;
 }
 
-/* 定义区块的背景色和外边距和圆角 */
-.top-notice, .box-item, .p-block{
-    background-color: var(--bg-color);
-    box-shadow: var(--box-shadow);
-    border-radius: 5px;
-    margin: 10px;
-    padding: 0 10px;
-}
-
 .top-notice{
     color: #c50d0d85;
     font-family: var(--font-monospace);
@@ -135,36 +124,9 @@ header a{
     font-size: 0.9em;
 }
 
-.title-text{
-    color: var(--pk-font-color);
-    font-weight: bold;
-    font-size: 1.5em;
-}
-
-.item-text{
-    color: var(--pk-font-color);
-    font-weight:bold;
-    font-size: 1.1em;
-    border-bottom: solid 1px black;
-}
-
-.content-title{
-    color: var(--content-font-color);
-    font-weight: bold;
-    font-size: 1.1em;
-}
-.content-text{
-    color: var(--content-font-color);
-}
-
-.block{
-    display: block;
-    text-decoration: none;
-}
-
 .card-listing{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
     overflow: auto;
