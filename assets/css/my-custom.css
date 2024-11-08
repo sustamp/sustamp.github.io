@@ -7,7 +7,7 @@ body{
     font-family: var(--font-family);
 }
 
-/* *{border: solid 1px grey} */
+/* *{border: solid 1px lightblue} */
 
 header{
     /* 让header置顶 */
@@ -17,9 +17,14 @@ header{
     /* 固定在顶部 */
     top: 0; 
     display:flex;
-    justify-content: space-between;
+    flex-direction: column;
+    /* justify-content: space-between; */
     background: white;
     box-shadow: var(--box-shadow);
+}
+.logo-row{
+    display: flex;
+    justify-content: space-between;
 }
 .logo{
     display: flex;
@@ -27,6 +32,8 @@ header{
 }
 header a{
     text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 .nav-links{
@@ -34,7 +41,7 @@ header a{
     display:flex;
     justify-content: flex-end;
     margin: 0;
-    font-weight: bold;
+    font-weight: lighter;
     font-family: var(--font-monospace);
 }
 
@@ -51,6 +58,47 @@ header a{
 .nav-links li a:hover{
     background: #3d3d3d;
     color: white;
+}
+
+.webkit-box{
+    display: none;
+}
+
+.nav-burger{
+    display: inline-block;
+    cursor: pointer;
+}
+/* 汉堡菜单样式 */
+.nav-burger div {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.menu-col{
+    display: none;
+}
+
+.nav-links-column{
+    list-style-type: none;
+    border-top: 1px solid black;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--box-shadow);
+}
+
+.nav-links-column li a{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: var(--pk-font-color);
+    background-color: var(--bg-color);
+    padding: 10px;
+    border-bottom: 3px solid #f6f6f6;
 }
 
 .content{
@@ -79,9 +127,10 @@ header a{
 }
 
 .top-notice{
-    color: #3d3d3d;
+    color: #c50d0d85;
     font-family: var(--font-monospace);
     min-height: 30px;
+    font-size: 0.9em;
 }
 
 .title-text{
@@ -114,8 +163,10 @@ header a{
 footer{
     margin: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     background-color: var(--bg-color);
     box-shadow: var(--box-shadow);
+    font-size: 0.9em;
 }
 

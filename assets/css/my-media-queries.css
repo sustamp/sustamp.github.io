@@ -1,0 +1,19 @@
+/* 利用媒体查询实现响应式布局 */
+@media (max-width: 900px){
+    .nav-links{
+        display: none;
+    }
+    .content-wrapper{
+        width: 100%;
+    }
+
+    .webkit-box{
+        display: flex;
+        align-items: center;
+    }
+
+    .menu-col.show{
+        display: block;
+    }
+}
+

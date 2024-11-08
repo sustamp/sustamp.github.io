@@ -6,26 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/my-base.css" type="text/css">
     <link rel="stylesheet" href="assets/css/my-custom.css" type="text/css">
-    <title>Sustamp个人网站</title>
+    <link rel="stylesheet" href="assets/css/my-media-queries.css" type="text/css">
+    <title>云溪笔录 | Sustamp个人网站</title>
 </head>
 <body>
     <!-- 头部区域 -->
     <header>
-        <div class="logo">
-            <img alt="sustamps logo" src="assets/pictures/sustamp-logo.png" width="125" height="85">
-            <a class="title-text" href="index.html">云溪笔录</a>
+        <div class="logo-row">
+            <div class="logo">
+                <a class="title-text" href="index.html">
+                    <img alt="sustamps logo" src="assets/images/sustamp-logo.png" width="125" height="85">
+                    <span>云溪笔录</span>
+                </a>
+                <!-- <img alt="sustamps logo" src="assets/images/sustamp-logo.png" width="125" height="85">
+                <a class="title-text" href="index.html">云溪笔录</a> -->
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="notes-blog">笔记</a></li>
+                <li><a href="#">工具箱</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+            <div class="webkit-box">
+                <!-- 用于在移动端显示成菜单栏 -->
+                <div class="nav-burger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div> 
         </div>
-        <ul class="nav-links">
-            <li><a href="index.html">首页</a></li>
-            <li><a href="notes-blog">笔记</a></li>
-            <li><a href="#">工具栏</a></li>
-            <li><a href="#">关于</a></li>
-        </ul>
+        <div id="menu-col" class="menu-col">
+            <ul class="nav-links-column">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="notes-blog">笔记</a></li>
+                <li><a href="#">工具箱</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </div>
+        
     </header>
     <div class="content">
         <div class="content-wrapper">
             <div class="top-notice flex-col">
-                <blockquote>三更灯火五更天，正是男儿读书时</blockquote>
+                <blockquote>三更灯火五更天，正是男儿读书时。 —— 唐·颜真卿</blockquote>
             </div>
             <!-- <div id="breadcrumb">
                 <ol class="breadcrumb">
@@ -69,6 +93,44 @@
         </div>
     </div>
     
-    <footer>Loren 104855624@qq.com</footer>
+    <footer>
+        <div class="content-text">
+            <P>Loren</P>
+            <p>104855624@qq.com</P> 
+        </div>
+        <div class="content-text">
+            <p>梦醒人间看微雨，江山还似就温柔。</p>
+        </div>
+        
+    </footer>
+
+    <script>
+        const navToggle = document.querySelector('.nav-burger');
+        const navMenu = document.getElementById('menu-col');
+        // 点击菜单键时显示菜单栏
+        navToggle.addEventListener('click', () => {
+            if (navMenu.classList.contains('show')) {
+                navMenu.classList.remove('show');
+            } else {
+                navMenu.classList.toggle('show');
+            }
+            // navMenu.classList.toggle('show');
+        });
+        // // 在此菜单键或空白处时回收菜单栏
+        // document.addEventListener('click', function(event) {
+        //     if (!navMenu.contains(event.target) && event.target !== burger) {
+        //         navMenu.classList.remove('active');
+        //     }
+        // });
+        document.addEventListener('click', function(event) {
+            // if (!navMenu.contains(event.target) && event.target !== navToggle) {
+            //     navMenu.classList.remove('show');
+            //     alert("not target")
+            // }
+            if (!navMenu.contains(event.target) && !event.target.closest('.nav-burger') ) {
+                navMenu.classList.remove('show');
+            }
+        });
+    </script>
 </body>
 </html>
