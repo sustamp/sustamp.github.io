@@ -1,0 +1,121 @@
+body{
+    background-color: var(--primary-color);
+    /* 外边距为0，使其与顶端无间隔 */
+    margin: 0;
+    /* 设定行间距 */
+    line-height: 1.5;
+    font-family: var(--font-family);
+}
+
+/* *{border: solid 1px grey} */
+
+header{
+    /* 让header置顶 */
+    position: sticky;
+    /* 确保 header 在其他内容之上 */
+    z-index: 1000;
+    /* 固定在顶部 */
+    top: 0; 
+    display:flex;
+    justify-content: space-between;
+    background: white;
+    box-shadow: var(--box-shadow);
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+header a{
+    text-decoration: none;
+}
+
+.nav-links{
+    list-style: none;
+    display:flex;
+    justify-content: flex-end;
+    margin: 0;
+    font-weight: bold;
+    font-family: var(--font-monospace);
+}
+
+.nav-links li a{
+    /* 高度占据整个nav栏 */
+    height: 100%;
+    /* 使a标签也称为容器，并利用align-items是其中的项目居中  */
+    display:flex;
+    align-items: center;
+    color: black;
+    padding: 0 10px;
+    /* text-decoration: none; */
+}
+.nav-links li a:hover{
+    background: #3d3d3d;
+    color: white;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.content-wrapper{
+    width: 70%;
+}
+
+.sidebar{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 定义区块的背景色和外边距和圆角 */
+.top-notice, .box-item, .p-block{
+    background-color: var(--bg-color);
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+    margin: 10px;
+    padding: 0 10px;
+}
+
+.top-notice{
+    color: #3d3d3d;
+    font-family: var(--font-monospace);
+    min-height: 30px;
+}
+
+.title-text{
+    color: var(--pk-font-color);
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.item-text{
+    color: var(--pk-font-color);
+    font-weight:bold;
+    font-size: 1.1em;
+    border-bottom: solid 1px black;
+}
+
+.content-title{
+    color: var(--content-font-color);
+    font-weight: bold;
+    font-size: 1.1em;
+}
+.content-text{
+    color: var(--content-font-color);
+}
+
+.block{
+    display: block;
+    text-decoration: none;
+}
+
+footer{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: var(--bg-color);
+    box-shadow: var(--box-shadow);
+}
+

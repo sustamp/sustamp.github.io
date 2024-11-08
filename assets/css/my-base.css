@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/* 在 :root 选择器中定义变量，这样变量在整个文档中都可以访问。 */
+/* 使用 -- 前缀来定义变量名。 */
+:root {
+    /* 定义底色 */
+    --primary-color: #f6f6f6;
+    /* 定义背景色 */
+    --bg-color: white;
+    /* 定义字体列表 */
+    --font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+
+    --font-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+
+    --pk-font-color: #3d3d3d;
+    --content-font-color: #606c71;
+
+    /* 阴影效果 */
+    --box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+/* 元素呈现阴影效果 */
+.shadow-em{
+    box-shadow: var(--box-shadow);
+}
+/* flex水平布局 */
+.flex-row{
+    display: flex;
+}
+/* flex垂直布局 */
+.flex-col{
+    display: flex;
+    flex-direction: column;
+}
+.flex1{
+    flex:1;
+}
+.flex2{
+    flex:2;
+}
+.flex3{
+    /* 占据3份空间 */
+    flex:3;
+}
+
