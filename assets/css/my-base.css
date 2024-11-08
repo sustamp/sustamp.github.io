@@ -1,4 +1,7 @@
 @charset "UTF-8";
+
+/* *{border: solid 1px black} */
+
 /* 在 :root 选择器中定义变量，这样变量在整个文档中都可以访问。 */
 /* 使用 -- 前缀来定义变量名。 */
 :root {
@@ -15,7 +18,7 @@
     --content-font-color: #606c71;
 
     /* 阴影效果 */
-    --box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+    --box-shadow: 0 .325rem .25rem rgba(0, 0, 0, 0.075)!important;
 }
 
 /* 元素呈现阴影效果 */
@@ -26,6 +29,11 @@
 .flex-row{
     display: flex;
 }
+.flex-align-center{
+    display: flex;
+    align-items: center;
+}
+
 /* flex垂直布局 */
 .flex-col{
     display: flex;
@@ -41,4 +49,88 @@
     /* 占据3份空间 */
     flex:3;
 }
+
+/* 元素共用样式 */
+/* 定义区块的背景色和外边距和圆角 */
+.top-notice, .box-item, .p-block, .url-body{
+    background-color: var(--bg-color);
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+    margin: 10px;
+    padding: 0 10px;
+}
+
+.title-text{
+    color: var(--pk-font-color);
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.item-text{
+    color: var(--pk-font-color);
+    font-weight:lighter;
+    font-size: 1.3em;
+    border-bottom: solid 1px black;
+}
+
+.content-title{
+    color: black;
+    border-bottom: solid 1px black;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+.content-text{
+    color: var(--content-font-color);
+    font-size: 0.9em;
+}
+
+.block{
+    display: block;
+    text-decoration: none;
+}
+
+.overflow-clip{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    max-width: 70%;
+}
+
+.url-body{
+    flex-grow: 1;
+    min-width: 25%;
+    flex-basis: 0;
+}
+
+.url-body a{
+    display: flex;
+    align-items: center;
+}
+
+/* 设置链接图片的icon小样式 */
+.url-img{
+    height: 24px;
+    width: 24px;
+    border-radius: 3px;
+    /* 底色透明 */
+    background: transparent;
+    /* 使图片适应背景区域 */
+    background-size: contain; 
+    margin: 0 10px 0 5px;
+}
+
+.url-img img{
+    max-height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.url-info{
+    /* 使容器占据剩余空间 */
+    flex: 1;
+    /* 隐藏溢出的部分 */
+    overflow: hidden;
+}
+
 
