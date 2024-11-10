@@ -1,0 +1,218 @@
+/* * {border: solid 1px blue;} */
+body{
+    background-color: var(--primary-color);
+    /* 外边距为0，使其与顶端无间隔 */
+    margin: 0;
+    /* 设定行间距 */
+    line-height: 1.5;
+    font-family: var(--font-family);
+}
+
+header{
+    /* 让header置顶 */
+    position: sticky;
+    /* 确保 header 在其他内容之上 */
+    z-index: 1000;
+    /* 固定在顶部 */
+    top: 0; 
+    display:flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    background: white;
+    box-shadow: var(--box-shadow);
+}
+.logo-row{
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+header a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-box{
+    display: flex;
+}
+
+.nav-links{
+    list-style: none;
+    display:flex;
+    justify-content: flex-end;
+    margin: 0;
+    font-weight: lighter;
+    font-family: var(--font-monospace);
+}
+
+.nav-links li a{
+    /* 高度占据整个nav栏 */
+    height: 100%;
+    /* 使a标签也称为容器，并利用align-items是其中的项目居中  */
+    display:flex;
+    align-items: center;
+    color: black;
+    padding: 0 10px;
+    /* text-decoration: none; */
+}
+.nav-links li a:hover{
+    background: var(--primary-color);
+    border: solid 1px var(---primary-color);
+    /* color: white; */
+}
+
+.nav-links li a:target{
+    background: var(--primary-color);
+    border: solid 1px var(---primary-color);
+}
+
+.webkit-box{
+    /* display: none; */
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-burger{
+    display: inline-block;
+    cursor: pointer;
+}
+/* 汉堡菜单样式 */
+.nav-burger div {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* .menu-col{
+    display: none;
+} */
+
+.show{
+    display: block;
+    opacity: 1;
+    max-height: 120px;
+    transition: opacity 0.5s ease, max-height 0.5s ease;
+}
+
+.hidden{
+    /* display: none; */
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+.nav-links-column{
+    list-style-type: none;
+    border-top: 1px solid black;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+}
+
+.nav-links-column li a{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: var(--pk-font-color);
+    background-color: var(--bg-color);
+    padding: 10px;
+    border-bottom: 3px solid #f6f6f6;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    min-height: 85vh;
+}
+
+.content-wrapper{
+    width: 70%;
+    margin: 0 10px;
+}
+
+footer{
+    /* margin: 0; */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: var(--bg-color);
+    box-shadow: var(--box-shadow);
+    font-size: 0.9em;
+    padding: 0 30px;
+}
+
+.card-box{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    /* background-color: white; */
+    background: linear-gradient(to right, var(--bg-color), var(--primary-color));
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    margin: 20px 10px;
+}
+
+.card-listing{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    overflow: auto;
+}
+.card-listing section, .card-listing a{
+    /* flex-grow: 1;
+    flex-basis: auto; */
+    flex: 1;
+    min-height: 70px;
+    min-width: 150px;
+}
+
+.url-body{
+    border: solid 1px lightgrey;
+}
+
+.url-body:hover{
+    background: var(--primary-color);
+}
+
+.url-body a{
+    display: flex;
+    align-items: center;
+}
+
+/* 设置链接图片的icon小样式 */
+.url-img{
+    height: 30px;
+    width: 35px;
+    /* 底色透明 */
+    background: transparent;
+    /* 使图片适应背景区域 */
+    background-size: contain; 
+    margin: 5px;
+}
+
+.url-img img{
+    max-height: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.url-info{
+    /* 使容器占据剩余空间 */
+    flex: 1;
+    /* 隐藏溢出的部分 */
+    overflow: hidden;
+}
+
