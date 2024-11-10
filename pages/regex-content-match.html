@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- 使用 base 标签来设置基础路径，这样所有的相对路径都会基于这个基础路径。 -->
+        <base href="/">
+        <script src="assets/js/regex-match.js"></script>
+</head>
+<body>
+<h1>HTML测试</h1>
+<p>请输入正则表达式：</p>
+<input id="iptRegex" placeholder="(?<=\{).*?(?=\})" style="width:500px" value="(?<=\{).*?(?=\})" />
+<p>请输入要匹配的内容：</p>
+<textarea id="txtContent" type="textarea" style="width:500px;height:300px" value="http://www.baidu.com?x={year}&m={month}&d={day}" /></textarea>
+<div><button type="button" onclick="matchAll()">开始匹配</button></div>
+
+<p>匹配结果：</p>
+<div id="divResult"></div>
+
+<body>
+</html>
