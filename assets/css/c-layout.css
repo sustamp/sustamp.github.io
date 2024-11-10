@@ -170,12 +170,16 @@ footer{
     justify-content: flex-start;
     overflow: auto;
 }
-.card-listing section, .card-listing a{
-    /* flex-grow: 1;
-    flex-basis: auto; */
+.card-listing section{
     flex: 1;
     min-height: 70px;
     min-width: 150px;
+    /* 包含边框和内边距在宽度计算中 */
+    box-sizing: border-box;
+    /* 最大宽度不超过父容器 */
+    max-width: 100%;
+    /* 每个项目占40%宽度，减去间距。这样可以让一行最多只有2个项目 */
+    /* flex: 1 1 calc(40% - 5px); */
 }
 
 .url-body{
@@ -187,8 +191,12 @@ footer{
 }
 
 .url-body a{
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
 /* 设置链接图片的icon小样式 */
@@ -207,6 +215,7 @@ footer{
     max-width: 100%;
     display: flex;
     align-items: center;
+    border-radius: 5px;
 }
 
 .url-info{
@@ -214,5 +223,56 @@ footer{
     flex: 1;
     /* 隐藏溢出的部分 */
     overflow: hidden;
+    /* 确保问本容器不会超出图片范围 */
+    max-width: 100%;
+}
+
+.url-v-body{
+    border: solid 1px lightgrey;
+    box-sizing: border-box;
+}
+
+.url-v-body a{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* 水平从左到右 */
+    align-items: flex-start;
+    /* 垂直居中对齐 */
+    justify-content: center;
+    text-decoration: none;
+}
+
+.url-v-img{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* 设置初始大小为100%，保证图片不会超出容器 */
+    flex-basis: 100%;
+    /* 设置最大尺寸，但这可能使得图片在单独一行时有空白区域 */
+    /* max-height: 125px; */
+    /* max-width: 200px; */
+    /* 底色透明 */
+    background: transparent;
+    /* 使图片适应背景区域 */
+    /* background-size: contain;  */
+    /* 保持宽高比并填充容器 */
+    background-size: fill; 
+    margin: 5px;
+}
+
+.url-v-img img{
+    /* 图片宽度占满父容器 */
+    width: 100%;
+    /* 保持图片宽高比 */
+    height: auto;
+    /* height: 100%; */
+    /* 确保图片不会超出父容器 */
+    /* max-width: 100%; */
+    /* 保持宽高比并填充容器 */
+    /* object-fit: fill; */
+    /* 去除图片底部的空白间隙 */
+    display: block;
+    border-radius: 5px;
 }
 
