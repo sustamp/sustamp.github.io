@@ -1,0 +1,30 @@
+{
+    "routers":[
+        {
+            "title":"首页",
+            "href":"/home",
+            "url":"pages/home.html"
+        },
+        {
+            "title":"笔记",
+            "href":"/notes-blog",
+            "url":"/notes-blog",
+            "outer":true
+        },
+        {
+            "title":"工具箱",
+            "href":"/toolkit",
+            "url":"pages/toolkit.html"
+        },
+        {
+            "title":"资源导航",
+            "href":"/resourcelinks",
+            "url":"pages/resourcelinks.html"
+        },
+        {
+            "title":"关于",
+            "href":"/about",
+            "url":"/about.html"
+        }
+    ]
+}

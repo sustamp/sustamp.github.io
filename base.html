@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="assets/css/c-base.css"></link>
+    <link rel="stylesheet" href="assets/css/c-layout.css"></link>
+    <link rel="stylesheet" href="assets/css/c-media-queries.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/extensions.css" type="text/css">
+
+    <title>云溪笔录 | Sustamp个人网站</title>
+</head>
+<body>
+    <!-- 头部区域 -->
+    <header>
+        <div class="logo-row">
+            <div class="logo">
+                <a class="title-text" href="index.html">
+                    <img alt="sustamps logo" src="assets/pictures/sustamp-logo.png" width="125" height="85">
+                    <span>云溪笔录</span>
+                </a>
+                <!-- <img alt="sustamps logo" src="assets/images/sustamp-logo.png" width="125" height="85">
+                <a class="title-text" href="index.html">云溪笔录</a> -->
+            </div>
+            <nav class="nav-box">
+                <ul class="nav-links">
+                    <li><a href="#/" data-page="pages/home.html">首页</a></li>
+                    <li><a href="/notes-blog" data-page="">笔记</a></li>
+                    <li><a href="#/toolkit" data-page="pages/toolkit.html">工具箱</a></li>
+                    <li><a href="#/about" data-page="about.html">About</a></li>
+                </ul>
+                <div class="webkit-box">
+                    <!-- 用于在移动端显示成菜单栏 -->
+                    <div id="burger" class="nav-burger">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div> 
+            </nav>
+        </div>
+        <div id="menu" class="menu-col hidden">
+            <ul id="nav-list" class="nav-links-column">
+                <!-- <li><a href="#/" data-page="pages/home.html">首页</a></li>
+                <li><a href="/ntoes-blog">笔记</a></li>
+                <li><a href="#/toolkit" data-page="pages/toolkit.html">工具箱</a></li>
+                <li><a href="#/resource-nav" data-page="pages/resource-nav.html">资源导航</a></li>
+                <li><a href="#/about" data-page="about.html">About</a></li> -->
+            </ul>
+        </div>
+        
+    </header>
+    <div class="content">
+        <div class="content-wrapper" id="content-wrapper">
+            <!-- 这里是动态内容 -->
+        </div>
+    </div>
+    
+    <footer>
+        <div class="content-text">
+            <span class="item-text">Loren.su</span><br>
+            <span>Email: 104855624@qq.com</span> 
+        </div>
+        <div class="content-text">
+            <span>梦醒人间看微雨，江山还似就温柔。</span>
+        </div>
+    </footer>
+    <!-- <script> 标签放在 <body> 的结尾，这样可以确保所有DOM元素已经加载完毕，脚本可以直接访问这些元素。 -->
+    <script src="assets/js/stylet-utils.js"></script>
+    <script src="assets/js/c-main.js"></script>
+    <script>
+        window.onload = async function() {
+            await createLinks('.nav-links-column');
+            const hash = window.location.hash;
+            if (hash !== '') {
+                // 如果哈希值不为空，则加载对应的页面
+                loadContent(hashToDataPage(hash));
+            }
+            else {
+                // 如果哈希值为空，则加载主页
+                loadContent(hashToDataPage());
+            }
+        };
+
+        // createLinks('.nav-links-column');
+        burgerClick('burger', 'menu', 'show', 'hidden');
+        //加载页面时，先加载主页
+        // loadContent('pages/home.html', 'content-wrapper');
+        
+    </script>
+</body>
+</html>
