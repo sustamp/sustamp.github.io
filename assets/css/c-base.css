@@ -59,7 +59,7 @@
 
 /* 元素共用样式 */
 /* 定义区块的背景色和外边距和圆角 */
-.top-notice, .box-item, .p-block, .url-body{
+.top-notice, .box-item, .p-block, .url-body, .url-v-body{
     background-color: var(--bg-color);
     box-shadow: var(--box-shadow);
     border-radius: 5px;
@@ -104,6 +104,9 @@
 .content-text{
     color: var(--content-font-color);
     font-size: 0.9em;
+}
+.video-text{
+    color: black;
 }
 
 /* 块样式，取消下环线 */
