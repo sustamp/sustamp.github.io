@@ -15,6 +15,12 @@
     .menu-col{
         display: block;
     } */
+
+    /* 当屏幕足够小时，内容盒子变成垂直方向布局 */
+    .content-box{
+        display: flex;
+        flex-direction: column;
+    }
      
 }
 
