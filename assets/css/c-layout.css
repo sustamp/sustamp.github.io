@@ -141,6 +141,15 @@ header a{
     margin: 0 10px;
 }
 
+.content-box{
+    display: flex;
+}
+/* 内容盒子内所有子元素样式统一：最小宽度为0，最大宽度为占满容器宽度。这样保证容器能正常缩放 */
+.content-box * {
+    min-width: 0;
+    max-width: 100%;
+}
+
 footer{
     /* margin: 0; */
     display: flex;
@@ -165,7 +174,6 @@ footer{
 
 .card-listing{
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
     overflow: auto;
@@ -182,15 +190,15 @@ footer{
     /* flex: 1 1 calc(40% - 5px); */
 }
 
-.url-body{
+.card-body{
     border: solid 1px lightgrey;
 }
 
-.url-body:hover{
+.card-body:hover{
     background: var(--primary-color);
 }
 
-.url-body a{
+.card-body a{
     height: 100%;
     width: 100%;
     display: flex;
@@ -200,7 +208,7 @@ footer{
 }
 
 /* 设置链接图片的icon小样式 */
-.url-img{
+.card-img{
     height: 30px;
     width: 35px;
     /* 底色透明 */
@@ -210,7 +218,7 @@ footer{
     margin: 5px;
 }
 
-.url-img img{
+.card-img img{
     max-height: 100%;
     max-width: 100%;
     display: flex;
@@ -218,7 +226,7 @@ footer{
     border-radius: 5px;
 }
 
-.url-info{
+.card-info{
     /* 使容器占据剩余空间 */
     flex: 1;
     /* 隐藏溢出的部分 */
@@ -236,8 +244,8 @@ footer{
     width: 100%;
     display: flex;
     flex-direction: column;
-    /* 水平从左到右 */
-    align-items: flex-start;
+    /* 水平居中对齐 */
+    align-items: center;
     /* 垂直居中对齐 */
     justify-content: center;
     text-decoration: none;
