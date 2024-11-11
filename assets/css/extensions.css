@@ -1,0 +1,14 @@
+/* home.html */
+.top-notice{
+    color: #c50d0d85;
+    font-family: var(--font-monospace);
+    min-height: 30px;
+    font-size: 0.9em;
+}
+
+.sidebar{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
