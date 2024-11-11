@@ -45,6 +45,15 @@
     display: flex;
     flex-direction: column;
 }
+/* 前置条件display:flex，将布局变成水平方向。允许换行 */
+.horizontal{
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+/* 前置条件display:flex，将布局变成垂直布局 */
+.vertical{
+    flex-direction: column;
+}
 
 .flex1{
     flex:1;
@@ -57,9 +66,10 @@
     flex:3;
 }
 
+
 /* 元素共用样式 */
 /* 定义区块的背景色和外边距和圆角 */
-.top-notice, .box-item, .p-block, .url-body, .url-v-body{
+.top-notice, .box-item, .p-block, .card-body, .url-v-body{
     background-color: var(--bg-color);
     box-shadow: var(--box-shadow);
     border-radius: 5px;
@@ -150,7 +160,4 @@
     outline: none;
     font-family: var(--font-monospace);
 }
-
-
-
 
