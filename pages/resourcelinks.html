@@ -1,19 +1,9 @@
-<style>
-.top-search{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--primary-color);
-    padding: 10px;
-}
-
-</style>
 
 <div class="top-search box-item">
     <div><h2>资源导航</h2></div>
     <div class="search-container">
-        <input type="text" placeholder="请输入你想查询的信息" id="search-input"></input>
-        <button id="searchButton">搜索</button>
+        <input type="text" placeholder="请输入你想查询的信息" id="searchInput" class="search-input" oninput="search('searchInput')"></input>
+        <button id="searchButton" class="search-button" onclick="search('searchInput')">搜索</button>
     </div>
 </div>
 
@@ -24,7 +14,7 @@
                 <picture class="card-img">
                     <img src="assets/icons/box.png" alt="">
                 </picture>
-                <span>收藏</span>
+                <div><span>收藏</span></div>
             </div>
             <div class="card-listing">
                 <section class="url-v-body">
@@ -97,7 +87,7 @@
                 <picture class="card-img">
                     <img src="assets/icons/open-book.png" alt="">
                 </picture>
-                <span>书籍/教程</span>
+                <div><span>书籍/教程</span></div>
             </div>
             <div class="card-listing">
                 <section class="card-body">
@@ -118,7 +108,7 @@
                         </picture>
                         <div class="card-info">
                             <div class="content-title"><span>鸠摩搜书</span></div>
-                            <span class="content-text overflow-clip">电子书搜索引擎，一个电子书狂热爱好者自建的一个搜索平台，整合了一些电子书资源平台并且锁定了格式为电子书格式电子书搜索引擎，一个电子书狂热爱好者自建的一个搜索平台，整合了一些电子书资源平台并且锁定了格式为电子书格式电子书搜索引擎，一个电子书狂热爱好者自建的一个搜索平台，整合了一些电子书资源平台并且锁定了格式为电子书格式</span>
+                            <div><span class="content-text overflow-clip">电子书搜索引擎，一个电子书狂热爱好者自建的一个搜索平台，整合了一些电子书资源平台并且锁定了格式为电子书格式电子书搜索引擎，一个电子书狂热爱好者自建的一个搜索平台，整合了一些电子书资源平台并且锁定了格式为电子书格式电子书搜索引擎，一个电子书狂热爱好者自建的一个搜索平台，整合了一些电子书资源平台并且锁定了格式为电子书格式</span></div>
                         </div>
                     </a>
                 </section>
@@ -165,7 +155,7 @@
                 <picture class="card-img">
                     <img src="assets/icons/code.png" alt="">
                 </picture>
-                <span>技术/博客</span>
+                <div><span>技术/博客</span></div>
             </div>
             <div class="card-listing">
                 <section class="card-body">
@@ -209,7 +199,7 @@
                 <picture class="card-img">
                     <img src="assets/icons/top-content.png" alt="">
                 </picture>
-                <span>数据仓库</span>
+                <div><span>数据仓库</span></div>
             </div>
             <div class="card-listing">
                 <section class="card-body">
@@ -231,7 +221,7 @@
                 <picture class="card-img">
                     <img src="assets/icons/dice.png" alt="">
                 </picture>
-                <span>站点</span>
+                <div><span>站点</span></div>
             </div>
             <div class="card-listing" style="margin: 0 0">
                 <section class="card-body">
@@ -254,7 +244,7 @@
                 <picture class="card-img">
                     <img src="assets/icons/musical.png" alt="">
                 </picture>
-                <span>音乐</span>
+                <div><span>音乐</span></div>
             </div>
             <div class="card-listing" style="margin: 0 0">
                 <section class="card-body">
@@ -288,7 +278,7 @@
                 <picture class="card-img">
                     <img src="assets/icons/video.png" alt="">
                 </picture>
-                <span>影视</span>
+                <div><span>影视</span></div>
             </div>
             <div class="card-listing">
                 <section class="card-body">
@@ -332,7 +322,7 @@
                         </picture>
                         <div class="card-info">
                             <div class="content-title"><span>MX动漫</span></div>
-                            <span class="content-text overflow-clip">MX动漫在线 - 国漫</span>
+                            <div><span class="content-text overflow-clip">MX动漫在线 - 国漫</span></div>
                         </div>
                     </a>
                 </section>

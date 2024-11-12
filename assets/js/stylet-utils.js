@@ -36,3 +36,23 @@ function burgerClick(burgerSelector, menuSelector, showName, hiddenName) {
     });
 }
 
+function search(inputid){
+    //获取搜索框的值
+    const query = document.getElementById(inputid).value.toLowerCase();
+    console.info('query:' + query);
+
+    // 检索范围：所有样式为"card-listing"里的section标签
+    const sections = document.querySelectorAll('.card-listing section');
+    
+    sections.forEach(section => {
+         const content = section.innerText;
+         if (content.toLowerCase().includes(query)) {
+            //  console.info('content:' + content);
+             section.classList.remove('hidden');
+         }
+         else{
+            section.classList.add('hidden');
+         }
+    });
+    
+}

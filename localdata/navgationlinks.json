@@ -1,0 +1,77 @@
+{
+    "main": [
+      {
+        "tips": "在main中找<section id='book'>的card-box，没有则创建,样式名是key值，即clsss=card-box。然后找它的content",
+        "card-box": "book",
+        "content": {
+          "tips": "content找class的div，没有则创建。然后遍历list",
+          "class": "card-listing",
+          "list": [
+            {
+              "tips": "list中的每个元素的name为标题，value为链接对象。css标识class=css的div，以href为属性建立a标签，description为描述写在a的title中",
+              "name": "书栈网",
+              "css": "默认card-body",
+              "href": "https://www.bookstack.cn/",
+              "description": "分享知识，共享智慧",
+              "picture": {
+                "src": "assets/icons/books-logo.png",
+                "css": "card-img"
+              },
+              "info": {
+                "tips": "info属性建立卡片信息。若有titleStyle，则建立div，样式等于其值，内含span写name的值。descStyle建立div样式等于其值，span写description的值",
+                "css": "card-info",
+                "titleStyle": "content-title",
+                "descStyle": "video-text overflow-clip"
+              }
+            },
+            {
+              "tips": "list中的每个元素的name为标题，value为链接对象。css标识class=css的div，以href为属性建立a标签，description为描述写在a的title中",
+              "name": "书栈网",
+              "css": "默认card-body",
+              "href": "https://www.bookstack.cn/",
+              "description": "分享知识，共享智慧",
+              "picture": {
+                "src": "assets/icons/books-logo.png",
+                "css": "card-img"
+              },
+              "info": {
+                "tips": "info属性建立卡片信息。若有titleStyle，则建立div，样式等于其值，内含span写name的值。descStyle建立div样式等于其值，span写description的值",
+                "css": "card-info",
+                "titleStyle": "content-title",
+                "descStyle": "video-text overflow-clip"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "aside": [
+      {
+        "tips": "在main中找<section id='collect'>的card-box,位置为main，没有则创建，然后找它的content",
+        "card-box": "collect",
+        "content": {
+          "tips": "content找class的div，没有则创建。然后遍历list",
+          "class": "card-listing",
+          "list": [
+            {
+              "tips": "list中的每个元素的name为标题，value为链接对象。css标识class=css的div，以href为属性建立a标签，description为描述写在a的title中",
+              "name": "书栈网",
+              "css": "默认card-body",
+              "href": "https://www.bookstack.cn/",
+              "description": "分享知识，共享智慧",
+              "picture": {
+                "src": "assets/icons/books-logo.png",
+                "css": "card-img"
+              },
+              "info": {
+                "tips": "info属性建立卡片信息。若有titleStyle，则建立div，样式等于其值，内含span写name的值。descStyle建立div样式等于其值，span写description的值",
+                "css": "card-info",
+                "titleStyle": "content-title",
+                "descStyle": "video-text overflow-clip"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }

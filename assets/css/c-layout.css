@@ -93,21 +93,6 @@ header a{
     display: none;
 } */
 
-.show{
-    display: block;
-    opacity: 1;
-    max-height: 120px;
-    transition: opacity 0.5s ease, max-height 0.5s ease;
-}
-
-.hidden{
-    /* display: none; */
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: opacity 0.3s ease, max-height 0.3s ease;
-}
-
 .nav-links-column{
     list-style-type: none;
     border-top: 1px solid black;
@@ -175,7 +160,6 @@ footer{
 .card-listing{
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
     overflow: auto;
 }
 .card-listing section{
@@ -188,6 +172,10 @@ footer{
     max-width: 100%;
     /* 每个项目占40%宽度，减去间距。这样可以让一行最多只有2个项目 */
     /* flex: 1 1 calc(40% - 5px); */
+    /* seciton也成为flex容器，默认水平方向延伸 */
+    display: flex;
+    /* 交叉轴垂直居中对齐 */
+    align-items: center;
 }
 
 .card-body{
@@ -284,3 +272,27 @@ footer{
     border-radius: 5px;
 }
 
+
+/* common css */
+/* 元素展开/折叠，带动画效果 */
+.unfold{
+    display: block;
+    opacity: 1;
+    max-height: 120px;
+    transition: opacity 0.5s ease, max-height 0.5s ease;
+}
+.fold{
+    /* display: none; */
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+/* 隐藏元素且不占用布局空间 */
+.hidden{
+    display: none!important;
+}
+/* 隐藏元素但保留布局空间 */
+.invisible{
+    visibility: hidden;
+}
