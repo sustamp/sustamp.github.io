@@ -36,6 +36,11 @@ function burgerClick(burgerSelector, menuSelector, showName, hiddenName) {
     });
 }
 
+/**
+ * 搜索。根据inputid对应的搜索框的值，检索所有样式为"card-listing"的section标签。
+ *
+ * @param {String} inputid 搜索框的id。
+ */
 function search(inputid){
     //获取搜索框的值
     const query = document.getElementById(inputid).value.toLowerCase();
@@ -56,3 +61,101 @@ function search(inputid){
     });
     
 }
+
+
+async function autoContentGenerate(){
+    try {
+        
+        await fetch('localdata/resourcelinks.json')
+        .then(response => response.json()) // 解析JSON响应
+        .then(data => {
+            // setInLocalStorage('navigation-json', data);
+            if (data.main !== null) {
+                const main = document.getElementById('main');
+                data.main.forEach(item => {
+                    const target = document.getElementById(item.id);
+                    //如果目标存在，则追加节点。否则创建目标
+                    if (target !== null) {
+                        console.info('找到目标：' + item.id);
+                    }
+                    else{
+                        // 创建容器
+                        const cardBox = document.createElement('section');
+                        cardBox.setAttribute('id', item.id);
+                        cardBox.setAttribute('class', item.css);
+                        // 添加子元素
+                        const boxHeader = document.createElement('div');
+                        boxHeader.setAttribute('class', 'box-header');
+                        if (item.img !== null) {
+                            const picture = document.createElement('picture');
+                            picture.setAttribute('class', 'card-img');
+                            const img = document.createElement('img');
+                            img.setAttribute('src', item.img);
+                            picture.appendChild(img);
+                            boxHeader.appendChild(picture);
+                        }
+                        const category = document.createElement('div');
+                        category.innerHTML = '<span>' + item.category + '</span>';
+                        boxHeader.appendChild(category);
+
+                        // 将相关元素添加到容器中
+                        cardBox.appendChild(boxHeader);
+                        
+                        if (item.content !== null) {
+                            const cardListing = document.createElement('div');
+                            cardListing.setAttribute('class', item.content.css);
+                            // 遍历清单
+                            item.content.list.forEach(e => {
+                                // 创建卡片
+                                const card = document.createElement('section');
+                                card.setAttribute('class', e.css);
+                                // 设置a标签
+                                const a = document.createElement('a');
+                                a.setAttribute('href', e.href);
+                                a.setAttribute('target', "_blank");
+                                a.setAttribute('title', e.description);
+                                // 设置图片信息
+                                if (e.picture !== null) {
+                                    const picture = document.createElement('picture');
+                                    picture.setAttribute('class', e.picture.css);
+                                    const img = document.createElement('img');
+                                    img.setAttribute('src', e.picture.src);
+                                    picture.appendChild(img);
+                                    a.appendChild(picture);
+                                }
+                                //设置介绍信息
+                                if (e.info !== null) {
+                                    const info = document.createElement('div');
+                                    info.setAttribute('class', e.info.css);
+                                    const div = document.createElement('div');
+                                    div.setAttribute('class', e.info.titleStyle);
+                                    div.innerHTML = '<span>' + e.name + '</span>';
+                                    const span = document.createElement('span');
+                                    span.setAttribute('class', e.info.descStyle);
+                                    span.innerHTML = e.description;
+                                    
+                                    info.appendChild(div);
+                                    info.appendChild(span);
+                                    
+                                    a.appendChild(info);
+                                }
+                                card.appendChild(a);
+                                cardListing.appendChild(card);
+                            });
+                            cardBox.appendChild(cardListing);
+                        }
+                        main.appendChild(cardBox);
+                    }
+                    
+                });
+            }
+            
+        })
+    } catch (error) {
+        console.error('自动生成内容页时出错:', error);
+    }
+    
+    
+}
+
+
