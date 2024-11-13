@@ -1,0 +1,176 @@
+{
+    "main": [
+      {
+        "tips": "在main中找<section id='book'>的card-box，没有则创建,样式为css，没有则代码默认clsss=card-box。然后找它的content",
+        "id": "books",
+        "category": "书籍/教程",
+        "img": "assets/icons/open-book.png",
+        "content": {
+          "tips": "遍历list",
+          "list": [
+            {
+              "tips": "list中的每个元素的name为标题，href为属性建立a标签，description为描述写在a的title中",
+              "name": "W3CScholl",
+              "href": "https://www.w3cschool.cn/",
+              "description": "编程狮 - 随时随地学编程",
+              "picture": {
+                "src": "assets/icons/w3cschool.png"
+              }
+            },
+            {
+              "name": "菜鸟教程",
+              "href": "https://www.runoob.com/",
+              "description": "菜鸟教程，学的不仅是技术，更是梦想！",
+              "picture": {
+                "src": "assets/icons/runoob-logo.png"
+              }
+            },
+            { 
+              "name": "鸠摩搜书",
+              "href": "https://www.jiumodiary.com/",
+              "description": "电子书搜索引擎，一个电子书狂热爱好者自建的一个搜索平台，整合了一些电子书资源平台并且锁定了格式为电子书格式电子书搜索引擎，一个电子书狂热爱好者自建的一个搜索平台，整合了一些电子书资源平台并且锁定了格式为电子书格式电子书搜索引擎，一个电子书狂热爱好者自建的一个搜索平台，整合了一些电子书资源平台并且锁定了格式为电子书格式",
+              "picture": {
+                "src": "assets/icons/eleps.png"
+              }
+            },
+            { 
+              "name": "敬请期待...",
+              "href": "#",
+              "description": "comming soon...",
+              "picture": {
+                "src": "assets/icons/comming-soon.png"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id":"skillOrBlog",
+        "category":"技术/博客",
+        "img": "assets/icons/code.png",
+        "content":{
+          "list": [
+            {
+              "name": "阮一峰的网络日志",
+              "href": "http://www.ruanyifeng.com/blog/",
+              "description": "这里记录每周值得分享的科技内容，周五发布。",
+              "picture":{
+                "src": "assets/icons/pc-mini-green.png"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "warehouse",
+        "category": "数据仓库",
+        "img": "assets/icons/top-content.png",
+        "content": {
+          "list": [
+            {
+              "name": "Gitee",
+              "href": "https://gitee.com/",
+              "description": "国内领先的企业级研发效能和开源代码托管平台",
+              "picture": {
+                "src": "https://e-assets.gitee.com/gitee-community-web/_next/static/media/logo-white.a5b0e29c.svg"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "website",
+        "category": "站点",
+        "img": "assets/icons/dice.png",
+        "content": {
+          "list": [
+            {
+              "name": "bilibili",
+              "href": "https://www.bilibili.com/",
+              "description": "哔哩哔哩 (゜-゜)つロ 干杯~-",
+              "picture": {
+                "src": "assets/icons/bilibili-favicon.ico"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "music",
+        "category": "音乐",
+        "img": "assets/icons/musical.png",
+        "content": {
+          "list": [
+            {
+              "name": "5sing",
+              "href": "http://5sing.kugou.com/",
+              "description": "中国原创音乐基地（被酷狗收购?），网站目前似乎还不适应手机端。",
+              "picture": {
+                "src": "assets/icons/5sing.png"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "television",
+        "category": "影视",
+        "img": "assets/icons/video.png",
+        "content": {
+          "list": [
+            {
+              "name": "无名小站",
+              "href": "https://www.gying.in/",
+              "description": "BTNULL无名小站原片库网，老牌影视资源名站",
+              "picture": {
+                "src": "assets/icons/btnull.png"
+              }
+            },
+            {
+              "name": "路漫漫",
+              "href": "https://www.lmm68.com/type/guochandongman.html",
+              "description": "路漫漫 - 国产动漫在线",
+              "picture": {
+                "src": "assets/icons/redcircle.png"
+              }
+            },
+            {
+              "name": "MX动漫",
+              "href": "https://www.mxdm.xyz/type/guoman.html",
+              "description": "MX动漫在线 - 国漫",
+              "picture": {
+                "src": "assets/icons/mxdm.png"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "aside": [
+      {
+        "id": "collect",
+        "category": "书籍/教程",
+        "img": "assets/icons/clock.png",
+        "content": {
+          "list": [
+            {
+              "name": "书栈网",
+              "href": "https://www.bookstack.cn/",
+              "description": "分享知识，共享智慧",
+              "picture": {
+                "src": "assets/icons/books-logo.png"
+              }
+            },
+            {
+              "name": "W3CScholl",
+              "href": "https://www.bookstack.cn/",
+              "description": "编程狮 - 随时随地学编程",
+              "picture": {
+                "src": "assets/icons/w3cschool.png"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
