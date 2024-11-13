@@ -10,7 +10,7 @@
           "list": [
             {
               "tips": "list中的每个元素的name为标题，href为属性建立a标签，description为描述写在a的title中",
-              "name": "W3CScholl",
+              "name": "W3CSchool",
               "href": "https://www.w3cschool.cn/",
               "description": "编程狮 - 随时随地学编程",
               "picture": {
