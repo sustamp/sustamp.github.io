@@ -75,8 +75,18 @@ TocRecto.prototype.createTOCElement = function() {
     tocMenu.className = _tocMenu;
     tocMenu.id = _tocMenu;
     tocMenu.innerHTML = `
-        <button class="su-toc-button" onclick="sucScrollToTop()">回到顶部</button>
-        <button class="su-toc-button" onclick="sucToggleSidebar()">导读目录</button>
+        <button class="su-toc-button" onclick="sucScrollToTop()">
+            <span>回</span>
+            <span>到</span>
+            <span>顶</span>
+            <span>部</span>
+        </button>
+        <button class="su-toc-button" onclick="sucToggleSidebar()">
+            <span>导</span>
+            <span>读</span>
+            <span>目</span>
+            <span>录</span>
+        </button>
     `;
 
     // 创建遮罩层
