@@ -1,8 +1,5 @@
 /* 定义toc侧边栏样式 */
 .su-toc-sidebar{
-    /* display: flex;
-    flex-direction: column;
-    overflow: auto; */
     position: fixed;
     top: 20px;
     /* 默认宽度，同时也是最小宽度 */
@@ -17,6 +14,8 @@
     z-index: 1002;
     /* 溢出时显示滚动条 */
     overflow-y: auto;
+    
+    border-radius: 5px;
 }
 .su-toc-sidebar.open {
     /* 显示时将位置从右侧边缘开始移除来 */
@@ -69,8 +68,9 @@
 
 .su-toc-conent{
     margin: 5px 10px;
-    /* padding: 5px 5px; */
+    /* padding: 10px 5px; */
     font-size: 1em;
+    line-height: 30px;
 }
 .su-toc-conent ul{
     list-style: none;
@@ -84,13 +84,8 @@
 
 .su-toc-item *{ 
     text-decoration: none;
-    color: #59636e;
+    color: #2c2b2b;
     display: block;
-}
-
-.su-toc-item li{
-    line-height: 30px;
-    font-size: 14px;
 }
 
 .su-toc-item a:hover{
