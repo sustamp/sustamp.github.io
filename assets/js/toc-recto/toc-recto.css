@@ -64,6 +64,7 @@
 .su-toc-header h3 {
     margin: 0;
     font-size: 18px;
+    border-bottom: none;
 }
 
 .su-toc-conent{
