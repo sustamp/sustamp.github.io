@@ -112,11 +112,12 @@
     background-color: #007bff;   
     color: #fff;
     /* 边框白色 */
-    border: solid 2px #fff;
+    border: solid 1px #007bff;
     
     /* 增加内边距，外边距为0 */
     padding: 1em 1em;
     font-size: 0.7em;
+    margin: 1px 0;
     
     /*  */
     display: flex;
@@ -161,7 +162,7 @@
         right: -30%;
         width: 30%;
     }
-    /*  .su-toc-button{
+    /* .su-toc-button{
         font-size: 1em;
     } */
 }
