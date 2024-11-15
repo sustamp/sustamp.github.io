@@ -91,9 +91,26 @@
               "picture": {
                 "src": "assets/icons/bilibili-favicon.ico"
               }
+            },
+            {
+              "name": "爱给网",
+              "href": "https://www.aigei.com/",
+              "description": "让创作更简单（数字娱乐免费素材下载网站）",
+              "picture": {
+                "src": "assets/icons/aigei-logo.png"
+              }
+            },
+            {
+              "name": "IconPark",
+              "href": "https://iconpark.oceanengine.com/official",
+              "description": "字节跳动旗下开源图标库收录站点",
+              "picture": {
+                "src": "assets/icons/pack.png"
+              }
             }
           ]
         }
+        
       },
       {
         "id": "music",
@@ -142,6 +159,32 @@
                 "src": "assets/icons/mxdm.png"
               }
             }
+          ]
+        }
+      },
+      {
+        "id": "wallpaper",
+        "category": "壁纸",
+        "img": "assets/icons/paper-plane.png",
+        "content": {
+          "list": [
+            {
+              "name": "壁纸湖",
+              "href": "https://bizihu.com/",
+              "description": "手机壁纸的宝藏网站",
+              "picture": {
+                "src": "assets/icons/scroll.png"
+              }
+            },
+            {
+              "name": "彼岸桌面",
+              "href": "http://www.netbian.com/",
+              "description": "提供手机和电脑壁纸的老牌网站",
+              "picture": {
+                "src": "assets/icons/scroll-paper.png"
+              }
+            }
+           
           ]
         }
       }
