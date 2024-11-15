@@ -1,16 +1,22 @@
 
-// TocRecto类。借助js构造函数定义，未使用ES6类语法
+/**
+ * TocRecto类。借助js构造函数定义，未使用ES6类语法
+ * 构造函数类属性值有:
+ * article: 文章区域的id。默认'article'
+ * headings: 要解析的标题级别。默认'h2,h3,h4,h5,h6'
+ * @param {*} config 配置信息，赋值方式config = {}
+ */
 function TocRecto(config){
 
     //默认属性与验证规则
     var defaultProperties = {
         article: {
             defaultValue: 'article',
-            validate: function(value){
-                if (typeof value !== 'string') {
-                    throw new Error('article must be a string');
-                }
-            }
+            // validate: function(value){
+            //     if (typeof value !== 'string') {
+            //         throw new Error('article must be a string');
+            //     }
+            // }
         },
         headings: {
             defaultValue: 'h2,h3,h4,h5,h6'
@@ -32,7 +38,7 @@ function TocRecto(config){
                     return this[`_${prop}`];
                 },
                 set: function(value) {
-                    descriptor.validate(value);
+                    // descriptor.validate(value);
                     this[`_${prop}`] = value;
                 }
             });
@@ -42,6 +48,7 @@ function TocRecto(config){
         }
     }
 
+    // 用传参中的配置信息给属性赋值
     for (const prop in config) {
         if (config.hasOwnProperty(prop)) {
             try {
@@ -59,6 +66,7 @@ const _tocOverlay = 'su-toc-overlay';
 const _tocHeader = 'su-toc-header';
 const _tocContent = 'su-toc-conent';
 const _tocMenu = 'su-toc-menu';
+
 // 原型方法createTOCElement()，生成导读栏所需要的html元素
 TocRecto.prototype.createTOCElement = function() {
 
@@ -114,8 +122,8 @@ TocRecto.prototype.generateTOC = function() {
         // 获取toc区域
         // const tocContent = document.querySelector('.su-toc-conent');
         const tocContent = tocSidebar.querySelector(`.${_tocContent}`);
-        // 基础字体大小（单位：em）
-        let baseFontSize = 1;
+        // 基础字体大小（单位：px）
+        let baseFontSize = 16;
         // 基础左边距（单位：px）
         let baseMarginLeft = 10;
         
@@ -125,7 +133,7 @@ TocRecto.prototype.generateTOC = function() {
 
             const contentFontSize = window.getComputedStyle(tocContent).getPropertyValue('font-size');
             if (contentFontSize) {
-                baseFontSize = contentFontSize;   
+                baseFontSize = contentFontSize.replace('px', '');
             }
         }
         
@@ -172,8 +180,9 @@ TocRecto.prototype.generateTOC = function() {
                     const newUL = document.createElement('ul');
                     // 加点缩进
                     // li.style.paddingLeft = `${(level - range) * 0.45}em`;
-                    li.style.marginLeft = baseMarginLeft + (level - rootLevel) * 8.5 + 'px';
-                    li.style.fontSize = baseFontSize * (1 - (level - rootLevel) * 0.1) + 'em';
+                    li.style.fontSize = baseFontSize * (1 - (level - range) * 0.06) + 'px';
+                    li.style.marginLeft = baseMarginLeft + (level - range) * 6 + 'px';
+                    
                     newUL.appendChild(li);
                     // 从栈顶追加元素
                     stack[stack.length - 1].appendChild(newUL);
