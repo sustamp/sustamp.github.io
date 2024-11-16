@@ -26,6 +26,10 @@ function TocRecto(config){
         },
         tocHeader: {
             defaultValue: '本文目录'
+        },
+        //是否优化标题id，默认为true。
+        headingOptimal: {
+            defaultValue: true
         }
     };
 
@@ -49,16 +53,19 @@ function TocRecto(config){
     }
 
     // 用传参中的配置信息给属性赋值
-    for (const prop in config) {
-        if (config.hasOwnProperty(prop)) {
-            try {
-                this[prop] = config[prop];
-            } catch (error) {
-                console.error(error);
+    if (config) {
+        for (const prop in config) {
+            if (config.hasOwnProperty(prop)) {
+                try {
+                    this[prop] = config[prop];
+                } catch (error) {
+                    console.error(error);
+                }
+                
             }
-            
         }
     }
+    
 }
 
 const _tocSidebar = 'su-toc-sidebar';
@@ -102,7 +109,7 @@ TocRecto.prototype.createTOCElement = function() {
     const tocHeader = document.createElement('div');
     tocHeader.className = _tocHeader;
     tocHeader.innerHTML = `
-            <h3>本文目录</h3>
+            <h3>${this.tocHeader}</h3>
             <button onclick="sucToggleSidebar()">x</button>
     `;
     tocSidebar.appendChild(tocHeader);
@@ -169,8 +176,8 @@ TocRecto.prototype.generateTOC = function() {
                 // 创建锚点
                 const a = document.createElement('a');
                 // 为标题添加id，以便链接跳转
-                if (!heading.id) {
-                    const headingText = heading.textContent.trim().toLowerCase().replace(/\s+/g, '-');
+                if (!heading.id || this.headingOptimal === true ) {
+                    const headingText = heading.id ? heading.id : heading.textContent.trim().toLowerCase().replace(/\s+/g, '-');
                     heading.id = `heading-${headingText}`;
                 }
                 a.href = '#' + heading.id;
