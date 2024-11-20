@@ -103,6 +103,9 @@
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
+
+    /* 设置透明度 */
+    opacity: 0.9;
     
 }
 /* 导航边框栏中按钮样式 */
