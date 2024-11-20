@@ -100,19 +100,20 @@ TocRecto.prototype.createTOCElement = function() {
     // `;
     tocMenu.innerHTML = `
         <button class="su-toc-button" onclick="sucScrollToTop()">
-            <i class="fa-solid fa-chevron-up"></i>
+            <span class="fa--chevron-up"></span>
         </button>
         <button class="su-toc-button" onclick="sucToggleSidebar()">
+            <!-- <span class="fa--list-ul"></span> -->
             <span>导</span>
             <span>读</span>
             <span>目</span>
             <span>录</span>
         </button>
         <button class="su-toc-button" onclick="sucGo2Href('${this.home}')">
-            <i class="fa-solid fa-house-chimney"></i>
+            <span class="fa--house-chimney"></span>
         </button>
         <button class="su-toc-button" onclick="sucScrollToButtom()">
-            <i class="fa-solid fa-chevron-down"></i>
+            <span class="fa--chevron-down"></span>
         </button>
     `;
 

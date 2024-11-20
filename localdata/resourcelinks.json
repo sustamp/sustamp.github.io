@@ -101,6 +101,14 @@
               }
             },
             {
+              "name": " Iconify",
+              "href": "https://icon-sets.iconify.design/",
+              "description": "在线图标转图片工具",
+              "picture":{
+                "src": "assets/icons/code.png"
+              }
+            },
+            {
               "name": "Font Awesome 6",
               "href": "https://fa6.dashgame.com/",
               "description": "Font Awesome 6,一套始终绝佳的图标字体库和CSS框架",
