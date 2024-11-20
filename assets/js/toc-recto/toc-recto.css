@@ -114,15 +114,17 @@
     /* 边框白色 */
     border: solid 1px #007bff;
     
+    /* font-size: 0.7em; */
     /* 增加内边距，外边距为0 */
     padding: 1em 1em;
-    font-size: 0.7em;
     margin: 1px 0;
     
-    /*  */
+    /* flex布局 */
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* 设置宽度一致 */
+    width: 100%;
 }
 .su-toc-button:hover {
     background-color: #0056b3;

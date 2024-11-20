@@ -101,6 +101,14 @@
               }
             },
             {
+              "name": "Font Awesome 6",
+              "href": "https://fa6.dashgame.com/",
+              "description": "Font Awesome 6,一套始终绝佳的图标字体库和CSS框架",
+              "picture":{
+                "src": "assets/icons/code.png"
+              }
+            },
+            {
               "name": "IconPark",
               "href": "https://iconpark.oceanengine.com/official",
               "description": "字节跳动旗下开源图标库收录站点",
