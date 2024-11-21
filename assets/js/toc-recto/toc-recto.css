@@ -97,6 +97,7 @@
     /* border-radius: 5px; */
     
     /* max-width: 10vh; */
+    width: 2em;
     word-break: break-all;
     /* 垂直布局，横向元素居中 */
     display:flex;
