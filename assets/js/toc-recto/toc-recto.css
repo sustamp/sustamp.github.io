@@ -106,17 +106,17 @@
     box-sizing: border-box;
 
     /* 设置透明度 */
-    opacity: 0.9;
+    opacity: 0.85;
     
 }
 /* 导航边框栏中按钮样式 */
 .su-toc-button{
     cursor: pointer;
-    /* 背景蓝色，字体白色 */
-    background-color: #007bff;   
+    /* 背景色 */
+    background-color: #2f3d95;   
     color: #fff;
-    /* 边框白色 */
-    border: solid 1px #007bff;
+    /* 边框色 */
+    border: solid 1px #2f3d95;
     
     /* font-size: 0.7em; */
     /* 增加内边距，外边距为0 */
@@ -131,7 +131,7 @@
     width: 100%;
 }
 .su-toc-button:hover {
-    background-color: #0056b3;
+    background-color: #1e43bd;
 }
 .su-toc-button span{
     /* 每个字符单独一行 */
