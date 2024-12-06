@@ -177,6 +177,7 @@ TocRecto.prototype.generateTOC = function() {
         
         const headings = article.querySelectorAll(this.headings);
         if (headings) { 
+            // 顶层标题级别
             const rootLevel = parseInt(headings[0].tagName.slice(1));
             //根级标题数量
             var rootCount = 0;
@@ -198,7 +199,8 @@ TocRecto.prototype.generateTOC = function() {
                     title: heading.textContent,
                     children:[]
                 }
-
+                // 当前层级元素超过上下级逐一增加的个数时，将多出的元素推出去，这样既可保证父元素始终位于最后的位置。
+                // 例如若当前是h4标题时，toc栈大概是:[h2,h2,h3,h3,h4,h4]，此时多出的2个h4会全部推出栈顶，这样就能保证当前循环的h4标题位于离它最近的h3的下级。
                 while (toc.length - rootCount > 0 && (toc.length - (rootCount - 1) > level - rootLevel)) {
                     toc.pop();
                 }
