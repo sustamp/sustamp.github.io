@@ -176,65 +176,123 @@ TocRecto.prototype.generateTOC = function() {
         }
         
         const headings = article.querySelectorAll(this.headings);
-        if (headings) {
-            const ul = document.createElement('ul');
-            tocContent.appendChild(ul);
-            
+        if (headings) { 
             const rootLevel = parseInt(headings[0].tagName.slice(1));
-            //把最上级标题认定为1级标题，由于文章内容可能从h2开始，那么计算级别偏移量。
-            const range = rootLevel - 1;
-            
-            // 建立一个元素栈，首先放入根元素ul。
-            let stack = [ul];
-
+            //根级标题数量
+            var rootCount = 0;
+            // 标题栈，后进先出，最终只存放根级目录个数的标题。
+            var toc = [];
+            // 遍历标题，整理出toc目录结构对象
             headings.forEach(heading => {
                 // 标题级别
                 const level = parseInt(heading.tagName.slice(1));
-                // 创建子元素 - 当前标题目录
-                const elementTag = 'li'
-                const li = document.createElement(elementTag);
-                li.className = 'su-toc-item';
-                // 创建锚点
-                const a = document.createElement('a');
                 // 为标题添加id，以便链接跳转
                 if (!heading.id || this.headingOptimal === true ) {
                     const headingText = heading.id ? heading.id : heading.textContent.trim().toLowerCase().replace(/\s+/g, '-');
                     heading.id = `heading-${headingText}`;
                 }
-                a.href = '#' + heading.id;
-                a.textContent = heading.textContent;
-                li.appendChild(a);
 
-                //栈中元素超过当前级别的，把多余元素推出来，只保留最后的那个。
-                while(stack.length > level - range){
-                    stack.pop();
+                var item = {
+                    id: heading.id,
+                    level: level,
+                    title: heading.textContent,
+                    children:[]
                 }
-                // 同根级目录，直接追加节点
-                if (level === rootLevel) {
-                    li.style.borderBottom = '1px solid #ddd';
-                    stack[stack.length - 1].appendChild(li);
-                }else if (level > rootLevel) {
-                    // 下级目录则推入一个新的ul，包裹li元素
-                    const newUL = document.createElement('ul');
-                    // 加点缩进
-                    // li.style.paddingLeft = `${(level - range) * 0.45}em`;
-                    li.style.fontSize = baseFontSize * (1 - (level - range) * 0.06) + 'px';
-                    li.style.marginLeft = baseMarginLeft + (level - range) * 6 + 'px';
-                    
-                    newUL.appendChild(li);
-                    // 从栈顶追加元素
-                    stack[stack.length - 1].appendChild(newUL);
+
+                while (toc.length - rootCount > 0 && (toc.length - (rootCount - 1) > level - rootLevel)) {
+                    toc.pop();
                 }
-                stack.push(li);
+
+                if (level == rootLevel) {
+                    rootCount++;
+                }
+                else{
+                    // 下级目录，在父节点追加
+                    parent = toc[toc.length - 1];
+                    parent.children.push(item);
+                }
+                toc.push(item);   
                 
             });
-            
-            stack = null;//清空元素栈
+            //循环结束后，栈内还有非顶层级别的元素时，全部推出。
+            while (toc.length - rootCount > 0) {
+                toc.pop();
+            }
+            // console.log(toc);
+
+            if (toc.length > 0) {
+                const ul = document.createElement('ul');
+                tocContent.appendChild(ul);
+                //遍历目录，开始构建toc的html元素，并展开第一层目录
+                createTocElement(toc, ul, false);
+            }
+
         }
         
         
     } catch (error) {
         console.error(error);
+    }
+}
+
+/**
+ * 构建生成TOC目录的html元素
+ * 
+ * @param {Array} toc toc数组对象
+ * @param {object} ul ul元素
+ * @param {boolean} fold 是否折叠。默认false
+ * @param {number} rootLevel 顶层目录级别。默认rootLevel=2
+ */
+function createTocElement(toc, ul, fold=false, rootLevel=2){
+    // 基础字体大小（单位：px）
+    let baseFontSize = 16;
+    // 基础左边距（单位：px）
+    let baseMarginLeft = 10;
+
+    if (toc.length > 0) {
+        parentlevel = toc[0].level - 1;
+        //遍历目录，开始构建html
+        toc.forEach(item => {
+            // 锚点
+            const a = document.createElement('a');
+            a.href = '#' + item.id;
+            a.textContent = item.title;
+            const li = document.createElement('li');
+            li.className = 'su-toc-item';
+            li.appendChild(a);
+            if (item.level === rootLevel) {
+                li.style.borderBottom = '1px solid #ddd';
+            }
+            else{
+                // 下级目录做一下递进
+                li.style.fontSize = baseFontSize * (1 - (item.level - rootLevel) * 0.06) + 'px';
+                li.style.marginLeft = baseMarginLeft + (item.level - rootLevel) * 6 + 'px';
+            }
+            if (item.children.length > 0) {
+                const subUl = document.createElement('ul');
+                // 是否折叠子节点
+                if (fold) {
+                    const details = document.createElement('details');
+                    const summary = document.createElement('summary');
+                    details.appendChild(summary);
+                    const i = document.createElement('i');
+                    i.className = 'fa--angle-down';
+                    //增加一点左右内边距，以免在屏幕尺寸太小时不好点击
+                    i.style.padding = "0 1.2em";
+                    summary.appendChild(a);
+                    summary.appendChild(i);
+                    
+                    li.appendChild(details);
+                    details.appendChild(subUl);
+                }
+                else{
+                    li.appendChild(subUl);
+                }
+                
+                createTocElement(item.children, subUl, true);
+            }
+            ul.appendChild(li);
+        });
     }
 }
 
