@@ -33,6 +33,7 @@
 }
 
 .su-toc-header{
+    background-color: #fff;
     padding: 8px;
     /* padding: 5px 0px; */
     border-bottom: 1px solid #3d3d3d;
@@ -44,7 +45,8 @@
     /* 让header在当前区域置顶 */
     position: sticky;
     top:0;
-    background-color: #fff;
+    /*避免被内容遮挡 */
+    z-index: 1;
 }
 
 .su-toc-header h3 {
