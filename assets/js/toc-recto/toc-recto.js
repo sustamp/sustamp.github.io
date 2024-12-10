@@ -225,8 +225,9 @@ TocRecto.prototype.generateTOC = function() {
             if (toc.length > 0) {
                 const ul = document.createElement('ul');
                 tocContent.appendChild(ul);
-                //遍历目录，开始构建toc的html元素，并展开第一层目录
-                createTocElement(toc, ul, false);
+                //遍历目录，开始构建toc的html元素
+                //若要展开第一层目录，fold=false
+                createTocElement(toc, ul, true);
             }
 
         }
