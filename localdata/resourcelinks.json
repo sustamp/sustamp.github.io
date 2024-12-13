@@ -93,11 +93,11 @@
         "content": {
           "list": [
             {
-              "name": "ProcessOn",
-              "href": "https://www.processon.com/",
-              "description": "专业强大的作图工具，支持多人实时在线协作，可用于原型图、UML、BPMN、网络拓扑图等多种图形绘制",
-              "picture": {
-                "src": "https://www.processon.com/assets/imgs/logo_small.svg"
+              "name": "Draw.io",
+              "href": "https://app.diagrams.net/",
+              "description" : "一款强大且支持在线编辑和导出的流程图绘制神器",
+              "picture":{
+                "src": "assets/icons/redcircle.png"
               }
             },
             {
@@ -113,7 +113,7 @@
               "href": "https://www.jq22.com/textDifference",
               "description": "文本比较工具",
               "picture":{
-                "src": "assets/icons/comming-soon.png"
+                "src": "https://www.jq22.com/favicon.ico"
               }
             },
             {
@@ -121,7 +121,15 @@
               "href": "https://cron.ciding.cc/",
               "description": "在线Cron生成",
               "picture":{
-                "src": "assets/icons/comming-soon.png"
+                "src": "https://cron.ciding.cc/images/logo.png"
+              }
+            },
+            {
+              "name": "ProcessOn",
+              "href": "https://www.processon.com/",
+              "description": "专业强大的作图工具，支持多人实时在线协作，可用于原型图、UML、BPMN、网络拓扑图等多种图形绘制",
+              "picture": {
+                "src": "https://www.processon.com/assets/imgs/logo_small.svg"
               }
             }
           ]
