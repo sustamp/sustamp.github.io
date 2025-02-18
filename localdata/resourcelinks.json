@@ -207,22 +207,6 @@
               "picture": {
                 "src": "assets/icons/btnull.png"
               }
-            },
-            {
-              "name": "路漫漫",
-              "href": "https://www.lmm68.com/type/guochandongman.html",
-              "description": "路漫漫 - 国产动漫在线",
-              "picture": {
-                "src": "assets/icons/redcircle.png"
-              }
-            },
-            {
-              "name": "MX动漫",
-              "href": "https://www.mxdm.xyz/type/guoman.html",
-              "description": "MX动漫在线 - 国漫",
-              "picture": {
-                "src": "assets/icons/mxdm.png"
-              }
             }
           ]
         }
