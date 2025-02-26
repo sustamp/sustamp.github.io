@@ -47,7 +47,11 @@ function search(inputid){
     console.info('query:' + query);
 
     // 检索范围：所有样式为"card-listing"里的section标签
+    // 注：搜索到标签中有标题符合搜索条件则显示，否则隐藏。
+    // 但这里有个问题，搜索结果是按照卡片顺序排序，会造成某些卡片即便不符合搜索条件也会排列在上方。
+    // 现有的做法中无论是查找parentElement还是设置order都会引起一些问题，故暂不处理
     const sections = document.querySelectorAll('.card-listing section');
+    let order = 1;
     
     sections.forEach(section => {
          const content = section.innerText;
